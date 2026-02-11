@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>नयना ❤️ सौगात | विवाह समारोह</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --maroon: #6b0f1a;
+  --gold: #c9a227;
+  --cream: #fdf6ec;
+  --white: #ffffff;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--cream);
+  color: #333;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, p { font-family: 'Noto Serif Devanagari', serif; }
+
+/* 1. Welcome Overlay */
+#overlay {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: var(--maroon);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  color: var(--gold);
+  text-align: center;
+  transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.enter-btn {
+  margin-top: 30px;
+  padding: 15px 40px;
+  background: var(--gold);
+  color: var(--maroon);
+  border: none;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1.1rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  transition: 0.3s;
+}
+
+.enter-btn:hover { transform: scale(1.05); background: var(--white); }
+
+/* 2. Modern Geometric Border */
+#mainContent {
+  display: none;
+  border: 15px solid transparent;
+  border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M0 0h100v100H0z' fill='none'/%3E%3Cpath d='M5 5h90v90H5z' fill='none' stroke='%23c9a227' stroke-width='2'/%3E%3Cpath d='M0 20L20 0M80 0l20 20M100 80l-20 20M20 100L0 80' stroke='%23c9a227' stroke-width='1'/%3E%3C/svg%3E") 30 round;
+  min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  width: 100%;
+  background: rgba(107,15,26,0.95);
+  padding: 15px 0;
+  z-index: 1000;
+}
+.navbar ul { display:flex; justify-content:center; list-style:none; gap:25px; }
+.navbar a { color:white; text-decoration:none; font-weight:500; transition:0.3s; }
+.navbar a:hover { color: var(--gold); }
+
+/* Hero Section */
+.hero { padding: 140px 20px 80px; position: relative; overflow: hidden; }
+.hero-ganesh { width: 100px; margin-bottom: 20px; animation: ganesh-bounce 2s infinite alternate; }
+@keyframes ganesh-bounce { from { transform: translateY(0); } to { transform: translateY(-15px); } }
+
+.names {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin: 20px 0;
+  background: linear-gradient(90deg, var(--maroon), var(--gold), var(--maroon));
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+@keyframes shimmer { to { background-position: 200% center; } }
+
+/* Venue Section Styles */
+.venue-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+  border: 1px solid var(--gold);
+}
+.venue-info-box { flex: 1; min-width: 300px; padding: 50px; text-align: left; display: flex; flex-direction: column; justify-content: center; }
+.map-frame { flex: 1.2; min-width: 300px; height: 450px; }
+.map-frame iframe { width: 100%; height: 100%; border: none; }
+.directions-btn {
+  align-self: flex-start;
+  background: var(--maroon);
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+/* Common */
+section { padding: 80px 20px; text-align: center; }
+.card-container { display:flex; flex-wrap:wrap; gap:30px; justify-content:center; margin-top:30px; }
+.card { background:white; padding:30px; border-radius:12px; box-shadow:0 5px 20px rgba(0,0,0,0.05); max-width:350px; flex: 1; }
+.hero-image img { width: 100%; max-width: 450px; border-radius: 20px; border: 8px solid white; box-shadow: 0 15px 35px rgba(0,0,0,0.2); }
+.petals { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 10; }
+.petal { position: absolute; background: var(--gold); border-radius: 150% 0 150% 0; opacity: 0.3; animation: fall linear infinite; }
+@keyframes fall { 0% { transform: translateY(-10vh) rotate(0deg); opacity: 0; } 100% { transform: translateY(110vh) rotate(360deg); opacity: 0; } }
+.floating-mandalas { position: fixed; width: 100%; height: 100%; pointer-events: none; z-index: -1; }
+.mandala { position: absolute; width: 300px; opacity: 0.05; animation: rotate 30s linear infinite; }
+@keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+.fade { opacity:0; transform: translateY(20px); transition: 1s ease; }
+.fade.visible { opacity:1; transform: translateY(0); }
+
+@media(max-width:768px){
+  .names { font-size:1.8rem; }
+  .navbar ul { gap: 10px; font-size: 0.8rem; }
+  .venue-info-box { text-align: center; padding: 30px; }
+  .directions-btn { align-self: center; }
+}
+</style>
+</head>
+<body>
+
+<audio id="weddingSong" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div id="overlay">
+  <img src="Ganesh.png" style="width: 80px;" alt="Ganesh">
+  <h2 style="margin-top:20px;">नयना ❤️ सौगात</h2>
+  <p style="color: white; letter-spacing: 2px;">विवाह निमन्त्रणा स्वीकार्नुहोस्</p>
+  <button class="enter-btn" onclick="startInvitation()">Open Invitation</button>
+</div>
+
+<div id="mainContent">
+  <nav class="navbar">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#event">Event</a></li>
+      <li><a href="#venue">Venue</a></li>
+      <li><a href="#rsvp">RSVP</a></li>
+    </ul>
+  </nav>
+
+  <div class="floating-mandalas">
+    <img src="https://www.svgrepo.com/show/428666/mandala-flower.svg" class="mandala" style="top: -50px; right: -50px;">
+    <img src="https://www.svgrepo.com/show/428666/mandala-flower.svg" class="mandala" style="bottom: -50px; left: -50px;">
+  </div>
+
+  <section class="hero fade" id="home">
+    <img src="Ganesh.png" alt="Ganesh" class="hero-ganesh">
+    <h1>श्री गणेशाय नम:</h1>
+    <p>मंगलम भगवान बिष्णु: मंगलम गुणधोजह।<br>मंगलम पुण्डरीकाक्षय: मंगलाय तनोहरी॥</p>
+    <div class="names">नयना कुईकेल ❤️ सौगात भण्डारी</div>
+    <p style="font-size: 1.2rem; font-weight: bold;">२०८२ फागुन १४ गते, बिहीबार</p>
+    <div id="countdown" style="margin-top:20px; font-weight: bold; color: var(--maroon);"></div>
+    <div class="hero-image" style="margin-top:40px;">
+      <img src="bride_groom.png" alt="Couple">
+    </div>
+  </section>
+
+  <section id="about" class="fade">
+    <h2>👰 🤵 शुभ विवाह</h2>
+    <div class="card-container">
+      <div class="card">
+        <h3>नयना कुईकेल</h3>
+        <p>सुपुत्री: श्री सुजन कुईकेल तथा इन्दिरा कुईकेल</p>
+      </div>
+      <div class="card">
+        <h3>सौगात भण्डारी</h3>
+        <p>सुपुत्र: श्री मुरारी भण्डारी तथा गोमा भण्डारी</p>
+        <p><small>गोकरणेश्वर-२, नयापाटी</small></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="event" class="fade">
+    <h2>📅 कार्यक्रम विवरण</h2>
+    <p>📍 स्थान: निजी निवास, कागेश्वरी मनोहरा-४, बाघधारा</p>
+    <p>📞 सम्पर्क: ९८६९१२५५१० / ९८६१९६९१०७</p>
+  </section>
+
+  <section id="venue" class="fade">
+    <h2>📍 विवाह स्थल</h2>
+    <div class="venue-container">
+      <div class="venue-info-box">
+        <h3>निजी निवास</h3>
+        <p>कागेश्वरी मनोहरा-४, बाघधारा (काठमाडौं)<br>बाघधारा बसपार्क नजिकै</p>
+        <a href="https://maps.app.goo.gl/aQ6d2v6Kx9jbRiUF7" target="_blank" class="directions-btn">🗺 Get Directions</a>
+      </div>
+      <div class="map-frame">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1081.4252292450024!2d85.41825441993433!3d27.725386953844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2snp!4v1770826285542!5m2!1sen!2snp" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section id="rsvp" class="fade">
+    <h2>✨ RSVP</h2>
+    <form style="max-width:400px; margin: 0 auto;">
+      <input type="text" placeholder="नाम" style="width:100%; padding:10px; margin:10px 0; border:1px solid var(--gold); border-radius:8px;">
+      <button type="button" class="enter-btn" style="width:100%;">Submit</button>
+    </form>
+  </section>
+
+  <footer style="padding:40px; background: var(--maroon); color: white; text-align: center;">
+    Made with love for Nayana ❤️ Saugat
+  </footer>
+</div>
+
+<div class="petals" id="petalContainer"></div>
+
+<script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) entry.target.classList.add('visible');
+  });
+});
+
+function startInvitation() {
+  const audio = document.getElementById('weddingSong');
+  const overlay = document.getElementById('overlay');
+  const content = document.getElementById('mainContent');
+
+  audio.play().catch(e => console.log("Audio blocked"));
+  overlay.style.transform = "translateY(-100%)";
+  content.style.display = "block";
+  
+  setTimeout(() => {
+    document.querySelectorAll('.fade').forEach(el => observer.observe(el));
+  }, 100);
+}
+
+const weddingDate = new Date("Feb 26, 2026 09:00:00").getTime();
+setInterval(() => {
+  const now = new Date().getTime();
+  const diff = weddingDate - now;
+  const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  document.getElementById("countdown").innerHTML = `⏳ ${d} दिन, ${h} घण्टा बाँकी`;
+}, 1000);
+
+const petalContainer = document.getElementById('petalContainer');
+for(let i=0; i<30; i++) {
+  const petal = document.createElement('div');
+  petal.className = 'petal';
+  petal.style.left = Math.random() * 100 + "vw";
+  petal.style.width = petal.style.height = (Math.random() * 15 + 5) + "px";
+  petal.style.animationDuration = (Math.random() * 5 + 5) + "s";
+  petalContainer.appendChild(petal);
+}
+</script>
+</body>
+</html>
