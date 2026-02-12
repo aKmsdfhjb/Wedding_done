@@ -96,6 +96,27 @@ h1, h2, h3, p { font-family: 'Noto Serif Devanagari', serif; }
 }
 @keyframes shimmer { to { background-position: 200% center; } }
 
+  /* Floating & Rotating Mandalas */
+.floating-mandalas { 
+  position: fixed; 
+  width: 100%; 
+  height: 100%; 
+  pointer-events: none; 
+  z-index: -1; 
+}
+
+.mandala { 
+  position: absolute; 
+  width: 350px; 
+  opacity: 0.07; /* हल्का देखिने गरी */
+  animation: floatAndRotate 40s linear infinite; 
+}
+
+@keyframes floatAndRotate { 
+  0% { transform: rotate(0deg) translateY(0px); }
+  50% { transform: rotate(180deg) translateY(-30px); } /* माथि तैरिने */
+  100% { transform: rotate(360deg) translateY(0px); }
+}
 /* Venue Section Styles */
 .venue-container {
   display: flex;
