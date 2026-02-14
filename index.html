@@ -109,7 +109,7 @@ h1, h2, h3, p { font-family: 'Noto Serif Devanagari', serif; }
 .flower {
   position: absolute;
   top: -50px;
-  opacity: 0.15;              /* 🌸 More translucent */
+  opacity: 0.09;              /* 🌸 More translucent */
   filter: blur(0.5px);        
   animation: fall linear forwards;
   will-change: transform;
@@ -424,7 +424,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(text => {
       console.log("Response:", text);
       if (text.includes("success")) {
-        alert("Submitted! Check sheet.");
+        alert("Submitted! 🙏.");
         form.reset();
       } else {
         alert("Server answer: " + text);
@@ -437,8 +437,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   </section>
 
-
-<!-- THIS SCRIPT MUST COME RIGHT AFTER THE FORM OR AT END OF BODY -->
 <div>
   <footer style="padding:40px; background: var(--maroon); color: white; text-align: center;">
     Made with love for Nayana ❤️ Saugat
