@@ -202,38 +202,49 @@ section { padding: 80px 20px; text-align: center; }
 <audio id="weddingSong" loop>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
-
 <div id="overlay">
   <div class="invitation-outer-card">
-    <div style="position: relative; display: inline-block;">
-    <img src="Ganesh_2.png" style="display: block; width: 10 /*ganesh watermark*/
-    <div style="font-size: 3rem; color: var(--maroon); margin-bottom: 10px;">ॐ</div>
-    
-    <h2 style="color: var(--maroon); font-size: 1.8rem; margin-bottom: 10px;">श्री गणेशाय नम:</h2>
-
-    <div class="shloka-text">
-      मंगलम भगवान बिष्णु: मंगलम गरुणधोजह<br>
-      मंगलम पुण्डरीकाक्षय: मंगलाय तनोहरी ॥
-    </div>
-
-    <div style="color: var(--maroon); font-size: 1.1rem; line-height: 1.8;">
-      <p>मंगलमय शुभ घडीमा,</p>
-      <p>बाज्दैछन् शहनाईका स्वर,</p>
-      <p>प्रेमको पावन बन्धनमा बाँधिँदैछन्</p>
-      <p>नयना र सौगात सुन्दर।</p>
+    <div style="position: relative; display: inline-block; padding: 20px; text-align: center;">
       
-      <div class="couple-names-highlight">
-        नयना ❤️ सौगात
+      <img src="Ganesh_2.png" alt="watermark" 
+           style="position: absolute; 
+                  top: 50%; 
+                  left: 50%; 
+                  transform: translate(-50%, -50%); 
+                  width: 70%; 
+                  opacity: 0.15; 
+                  z-index: 0; 
+                  pointer-events: none;">
+
+      <div style="position: relative; z-index: 1;">
+        <div style="font-size: 3rem; color: var(--maroon); margin-bottom: 10px;">ॐ</div>
+        
+        <h2 style="color: var(--maroon); font-size: 1.8rem; margin-bottom: 10px;">श्री गणेशाय नम:</h2>
+
+        <div class="shloka-text">
+          मंगलम भगवान बिष्णु: मंगलम गरुणधोजह<br>
+          मंगलम पुण्डरीकाक्षय: मंगलाय तनोहरी ॥
+        </div>
+
+        <div style="color: var(--maroon); font-size: 1.1rem; line-height: 1.8;">
+          <p>मंगलमय शुभ घडीमा,</p>
+          <p>बाज्दैछन् शहनाईका स्वर,</p>
+          <p>प्रेमको पावन बन्धनमा बाँधिँदैछन्</p>
+          <p>नयना र सौगात सुन्दर।</p>
+          
+          <div class="couple-names-highlight">
+            नयना ❤️ सौगात
+          </div>
+          
+          <p>हाम्रो निमन्त्रणा स्वीकार्नुहोस्!</p>
+        </div>
+
+        <button class="enter-btn" onclick="startInvitation()">Open Invitation</button>
       </div>
-      
-      <p>हाम्रो निमन्त्रणा स्वीकार्नुहोस्!</p>
-    </div>
 
-    <button class="enter-btn" onclick="startInvitation()">Open Invitation</button>
+    </div>
   </div>
 </div>
-
-<div id="mainContent">
   <nav class="navbar">
     <ul>
       <li><a href="#home">Home</a></li>
