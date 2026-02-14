@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ne">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>नयना ❤️ सौगात | विवाह समारोह</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<!--link for CSS-->
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<audio id="weddingSong" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+<div id="overlay">
+  <div class="invitation-outer-card">
+    <div style="position: relative; display: inline-block; padding: 20px; text-align: center;">
+      
+      <img src="images/Ganesh_2.png" alt="watermark" 
+           style="position: absolute; 
+                  top: 50%; 
+                  left: 50%; 
+                  transform: translate(-50%, -50%); 
+                  width: 70%; 
+                  opacity: 0.15; 
+                  z-index: 0; 
+                  pointer-events: none;">
+
+      <div style="position: relative; z-index: 1;">
+        <div style="font-size: 3rem; color: var(--maroon); margin-bottom: 10px;">ॐ</div>
+        
+        <h2 style="color: var(--maroon); font-size: 1.8rem; margin-bottom: 10px;">श्री गणेशाय नम:</h2>
+
+        <div class="shloka-text">
+          मंगलम भगवान बिष्णु: मंगलम गरुणधोजह<br>
+          मंगलम पुण्डरीकाक्षय: मंगलाय तनोहरी ॥
+        </div>
+
+        <div style="color: var(--maroon); font-size: 1.1rem; line-height: 1.8;">
+          <p>मंगलमय शुभ घडीमा,</p>
+          <p>बाज्दैछन् शहनाईका स्वर,</p>
+          <p>प्रेमको पावन बन्धनमा बाँधिँदैछन्</p>
+          <p>नयना र सौगात सुन्दर।</p>
+          
+          <div class="couple-names-highlight">
+            नयना ❤️ सौगात
+          </div>
+          
+          <p>हाम्रो निमन्त्रणा स्वीकार्नुहोस्!</p>
+        </div>
+
+        <button class="enter-btn" onclick="startInvitation()">Open Invitation</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+  <div id="mainContent">
+  <nav class="navbar">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#family">Family</a></li>
+      <li><a href="#event">Event</a></li>
+      <li><a href="#venue">Venue</a></li>
+      <li><a href="#rsvp">RSVP</a></li>
+      
+    </ul>
+  </nav>
+
+  <div class="floating-mandalas">
+    <img src="images/mandala.svg" class="mandala" style="top: -50px; right: -50px;">
+   
+  </div>
+    <!-- 🌸 Flower Shower Container -->
+<div id="flower-shower"></div>
+
+
+  <section class="hero fade" id="home">
+    <img src="images/Ganesh.png" alt="Ganesh" class="hero-ganesh">
+    <h1>श्री गणेशाय नम:</h1>
+    <p>मंगलम भगवान बिष्णु: मंगलम गुणधोजह।<br>मंगलम पुण्डरीकाक्षय: मंगलाय तनोहरी॥</p>
+    <div class="names">नयना कुईकेल ❤️ सौगात भण्डारी</div>
+    <p style="font-size: 1.2rem; font-weight: bold;">२०८२ फागुन १४ गते, बिहीबार</p>
+    <div id="countdown" style="margin-top:20px; font-weight: bold; color: var(--maroon);"></div>
+    <div class="hero-image" style="margin-top:40px;">
+      <img src="images/bride_groom.png" alt="Couple">
+    </div>
+  </section>
+
+  <section id="about" class="fade">
+    <h2>👰 🤵 शुभ विवाह</h2>
+    <div class="card-container">
+      <div class="card">
+        <h3>नयना कुईकेल</h3>
+        <p>सुपुत्री: श्री सुजन कुईकेल तथा इन्दिरा कुईकेल</p>
+      </div>
+      <div class="card">
+        <h3>सौगात भण्डारी</h3>
+        <p>सुपुत्र: श्री मुरारी भण्डारी तथा गोमा भण्डारी</p>
+        <p><small>गोकरणेश्वर-२, नयापाटी</small></p>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="family" class="fade">
+  <h2 style="margin-bottom: 20px;">👨‍👩‍👧‍👦 आत्मीय परिवार</h2>
+  
+  <div class="card-container">
+    <div class="card" style="border-top: 4px solid var(--gold);">
+     
+      <div style="margin-top: 15px; font-size: 0.9rem; color: #666;">
+        <h3 style="color: var(--maroon);">प्रार्थी:</h3>
+        <p>गणेश प्रसाद कुईकेल / साबीत्रि कुईकेल</p>
+      </div>
+    </div>
+
+    <div class="card" style="border-top: 4px solid var(--gold); max-width: 600px;">
+      
+      
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px; text-align: left;">
+         <h3 style="color: var(--maroon);">दर्शनाभिलाषी</h3>
+              <hr style="margin: 20px 0; border: 0; border-top: 1px dashed var(--gold);">
+
+          <p>•सरस्वती कुईकेल</p>
+         <p>• दीपक / सरिता</p>
+         <p>• मणिराम / इन्दिरा</p>
+         <p>• अनन्त / इश्वरी</p>
+         <p>• सरस्वती /सुजाता भट्टराई</p>
+         <p>• शिवजी / रेवती</p>
+         <p>• विमल / सचिता वाग्ले</p>
+      </div>
+
+      <hr style="margin: 20px 0; border: 0; border-top: 1px dashed var(--gold);">
+      
+      
+      <p style="line-height: 1.8; color: #444;">
+        कविता, कपिल,ई.नयन, प्रसिद्धी, मेधा, प्रास्ना, <br>
+        आशुतोष, रियासा, आभूषण, शास्वत कुईकेल
+      </p>
+    </div>
+  </div>
+</section>
+
+  <section id="event" class="fade">
+    <h2>📅 कार्यक्रम विवरण</h2>
+    <p>📍 स्थान: निजी निवास, कागेश्वरी मनोहरा-४</p>
+    <p>📞 सम्पर्क: <a href="tel:+9779869125510">9869125510</a>  
+                <a href="tel:+9779861969107">9861969107</a></p>
+  </section>
+
+  <section id="venue" class="fade">
+    <h2>📍 विवाह स्थल</h2>
+    <div class="venue-container">
+      <div class="venue-info-box">
+        <h3>निजी निवास</h3>
+        <p>कागेश्वरी मनोहरा-४, बाघधारा (काठमाडौं)<br>बाघधारा बसपार्क नजिकै</p>
+        <a href="https://maps.app.goo.gl/aQ6d2v6Kx9jbRiUF7" target="_blank" class="directions-btn">🗺 Get Directions</a>
+      </div>
+      <div class="map-frame">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1081.4252292450024!2d85.41825441993433!3d27.725386953844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2snp!4v1770826285542!5m2!1sen!2snp" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section id="rsvp" class="fade">
+    <h2>✨ RSVP</h2>
+    <form style="max-width:400px; margin: 0 auto;">
+      <input type="text" placeholder="नाम" style="width:100%; padding:10px; margin:10px 0; border:1px solid var(--gold); border-radius:8px;">
+      <button type="button" class="enter-btn" style="width:100%;">Submit</button>
+    </form>
+  </section>
+
+  <footer style="padding:40px; background: var(--maroon); color: white; text-align: center;">
+    Made with love for Nayana ❤️ Saugat
+  </footer>
+</div>
+  <!--link for javascript-->
+<script src="main.js"></script>
+
+</body>
+</html>
