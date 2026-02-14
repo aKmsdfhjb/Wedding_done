@@ -404,7 +404,50 @@ section { padding: 80px 20px; text-align: center; }
 </form>
 
   </section>
+<form id="rsvpForm" method="POST" style="max-width:400px; margin: 0 auto;">
+  <input type="text" name="name" placeholder="नाम" required
+         style="width:100%; padding:10px; margin:10px 0; border:1px solid var(--gold); border-radius:8px;">
+  <input type="text" name="attending" placeholder="आउँदै हुनुहुन्छ? (Yes/No)"
+         style="width:100%; padding:10px; margin:10px 0; border:1px solid var(--gold); border-radius:8px;">
+  <button type="submit" class="enter-btn" style="width:100%;">Submit</button>
+</form>
 
+<!-- THIS SCRIPT MUST COME RIGHT AFTER THE FORM OR AT END OF BODY -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  var form = document.getElementById("rsvpForm");
+
+  if (!form) {
+    console.error("RSVP form not found – check if id=\"rsvpForm\" exists exactly");
+    return;
+  }
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();  // STOPS THE RELOAD
+
+    console.log("Submit button clicked – JS is running now");
+
+    var data = {
+      name: form.name.value.trim(),
+      attending: form.attending.value.trim()
+    };
+
+    fetch("https://script.google.com/macros/s/AKfycbz0J33F6h_Ssy8NQ9xgmZ9b5T8kRrsn32hV8maWtBQQASAY1iCSGI3ipffaLO5jD67cmQ/exec", {
+      method: "POST",
+      mode: "no-cors",  // avoids CORS preflight issues
+      body: new FormData(form)  // simplest – sends all form fields
+    })
+    .then(function() {
+      alert("RSVP submitted! Check your Google Sheet in a moment 🙏");
+      form.reset();
+    })
+    .catch(function(err) {
+      console.error("Fetch problem:", err);
+      alert("Submission failed – check console for details");
+    });
+  });
+});
+</script>
   <footer style="padding:40px; background: var(--maroon); color: white; text-align: center;">
     Made with love for Nayana ❤️ Saugat
   </footer>
@@ -491,39 +534,7 @@ setInterval(() => {
 
 })();
 
-//RSVP//
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("rsvpForm");
-  if (!form) {
-    console.error("RSVP form not found");
-    return;
-  }
 
-  form.addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    console.log("Submit intercepted – sending to Google...");
-
-    const formData = new FormData();
-    formData.append("name", form.name.value.trim());
-    formData.append("attending", form.attending.value.trim());
-
-    fetch("https://script.google.com/macros/s/AKfycbz0J33F6h_Ssy8NQ9xgmZ9b5T8kRrsn32hV8maWtBQQASAY1iCSGI3ipffaLO5jD67cmQ/exec", {
-      method: "POST",
-      mode: "no-cors",              // ← key change: no-cors avoids preflight
-      body: formData                // ← sends as multipart/form-data or urlencoded
-    })
-    .then(() => {
-      // no-cors → cannot read response, so assume success if no network error
-      alert("RSVP submitted successfully! 🙏 (check your Google Sheet)");
-      form.reset();
-    })
-    .catch(err => {
-      console.error("Submission error:", err);
-      alert("Something went wrong – please check console");
-    });
-  });
-});
 </script>
 
 </body>
