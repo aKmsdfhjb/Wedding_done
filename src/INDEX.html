@@ -168,12 +168,16 @@
   </section>
 
   <section id="rsvp" class="fade">
-    <h2>✨ RSVP</h2>
-    <form style="max-width:400px; margin: 0 auto;">
-      <input type="text" placeholder="नाम" style="width:100%; padding:10px; margin:10px 0; border:1px solid var(--gold); border-radius:8px;">
-      <button type="button" class="enter-btn" style="width:100%;">Submit</button>
-    </form>
-  </section>
+  <h2>✨ RSVP</h2>
+  <form id="rsvpForm" style="max-width:400px; margin: 0 auto;">
+    <input type="text" name="name" placeholder="नाम" required
+           style="width:100%; padding:10px; margin:10px 0; border:1px solid var(--gold); border-radius:8px;">
+    <input type="text" name="attending" placeholder="आउँदै हुनुहुन्छ? (Yes/No)" 
+           style="width:100%; padding:10px; margin:10px 0; border:1px solid var(--gold); border-radius:8px;">
+    <button type="submit" class="enter-btn" style="width:100%;">Submit</button>
+  </form>
+</section>
+
 
   <footer style="padding:40px; background: var(--maroon); color: white; text-align: center;">
     Made with love for Nayana ❤️ Saugat
