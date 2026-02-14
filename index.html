@@ -493,17 +493,17 @@ setInterval(() => {
 })();
 
 //RSVP//
-  document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("rsvpForm");
-  
+
   if (!form) {
-    console.error("RSVP form not found!");
+    console.error("Form with id 'rsvpForm' not found – check your HTML");
     return;
   }
 
   form.addEventListener("submit", function(e) {
-    e.preventDefault();
-    e.stopPropagation();
+    e.preventDefault();  // ← this line stops the reload
+    console.log("Form submit prevented – sending data...");  // ← visible proof in console
 
     const data = {
       name: form.name.value.trim(),
@@ -517,7 +517,7 @@ setInterval(() => {
       body: JSON.stringify(data)
     })
     .then(res => {
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      if (!res.ok) throw new Error("Server responded " + res.status);
       return res.json();
     })
     .then(res => {
@@ -525,17 +525,15 @@ setInterval(() => {
         alert("RSVP submitted successfully! 🙏");
         form.reset();
       } else {
-        alert("Server said: " + (res.error || "unknown"));
+        alert("Submission failed: " + (res.error || "unknown response"));
       }
     })
     .catch(err => {
-      console.error("RSVP error:", err);
-      alert("Something went wrong: " + err.message);
+      console.error(err);
+      alert("Error: " + err.message);
     });
-    // NO .finally() or button disable anymore — user can click multiple times
   });
 });
-
 </script>
 
 </body>
